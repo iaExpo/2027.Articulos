@@ -1,972 +1,594 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Jorge Lozoya - El Fantástico | Tecnológico de Monterrey</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Jorge Lozoya · Driving the Future: Movilidad Autónoma en México | IA Expo Internacional 2027</title>
+<meta name="description" content="Sesión magistral del Dr. Jorge de Jesús Lozoya Santos (Tecnológico de Monterrey) en IA Expo Internacional 2027: Driving the Future, el camino hacia la movilidad autónoma en México.">
+<link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" sizes="180x180" href="https://iaexpo.github.io/2027.Articulos/IAx-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#060a14;
+    --ink-2:#0b1222;
+    --ink-3:#111a30;
+    --line:rgba(148,163,208,.16);
+    --text:#e8ecf6;
+    --muted:#9aa5c0;
+    --dim:#6b7694;
+    --cyan:#22d3ee;
+    --violet:#8b5cf6;
+    --amber:#f5b041;
+    --coral:#fb7185;
+    --mint:#34d399;
+    --grad:linear-gradient(100deg,#22d3ee 0%,#8b5cf6 55%,#f5b041 100%);
+  }
+  html,body{background:var(--ink)!important;background-color:var(--ink)!important;margin:0;padding:0}
+  .nv *{box-sizing:border-box;margin:0;padding:0}
+  .nv{font-family:'Manrope',system-ui,sans-serif;color:var(--text);background:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .nv a{color:inherit;text-decoration:none}
+  .nv em{font-style:normal}
+  .nv img{max-width:100%;display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  .serif{font-family:'Fraunces',Georgia,serif}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);display:inline-flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+  .h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-.02em;margin:18px 0 18px}
+  .lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:720px}
+  section.sec{padding:120px 0;position:relative}
+  .sec-alt{background:linear-gradient(180deg,var(--ink) 0%,var(--ink-2) 50%,var(--ink) 100%)}
 
-        :root {
-            --deep-autonomous: #0a1929;
-            --tech-racing: #0284c7;
-            --electric-green: #10b981;
-            --alebrije-orange: #f97316;
-            --metallic-grey: #64748b;
-            --sensor-cyan: #06b6d4;
-        }
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:16px;padding:18px 34px;border-radius:999px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;letter-spacing:.01em}
+  .btn-primary{background:var(--grad);color:#060a14!important;box-shadow:0 10px 40px -10px rgba(139,92,246,.7)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 50px -10px rgba(139,92,246,.9)}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+  .btn-ghost:hover{border-color:rgba(34,211,238,.6);background:rgba(34,211,238,.06)}
+  .btn .arr{transition:transform .25s}
+  .btn:hover .arr{transform:translateX(4px)}
 
-        html {
-            background: #0a1929 !important;
-            background-color: #0a1929 !important;
-        }
+  /* Top bar */
+  .topbar{position:absolute;top:0;left:0;right:0;z-index:5;padding:26px 0}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center}
+  .brand{font-weight:800;letter-spacing:.04em;font-size:15px}
+  .brand b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .top-cta{font-size:13px;font-weight:700;padding:10px 20px;border:1px solid var(--line);border-radius:999px;transition:.25s}
+  .top-cta:hover{border-color:var(--cyan);color:var(--cyan)}
 
-        body {
-            font-family: 'Nunito Sans', sans-serif !important;
-            background: #0a1929 !important;
-            background-color: #0a1929 !important;
-            color: #e0f2fe !important;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
+  /* Hero */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:140px 0 100px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+      radial-gradient(900px 600px at 85% 20%,rgba(139,92,246,.22),transparent 60%),
+      radial-gradient(700px 500px at 10% 80%,rgba(34,211,238,.14),transparent 60%),
+      radial-gradient(500px 400px at 60% 100%,rgba(245,176,65,.10),transparent 60%)}
+  .grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 50% 40%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 20%,transparent 75%);opacity:.35}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .9fr;gap:64px;align-items:center}
+  .hero h1{font-family:'Fraunces',Georgia,serif;font-weight:800;font-size:clamp(44px,6.6vw,92px);line-height:.98;letter-spacing:-.035em;margin:26px 0 28px}
+  .hero h1 em{font-style:normal;font-weight:400}
+  .hero .sub{font-size:clamp(18px,1.8vw,22px);color:var(--muted);max-width:600px;margin-bottom:40px}
+  .hero .sub strong{color:var(--text);font-weight:700}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:48px}
+  .meta-row{display:flex;flex-wrap:wrap;gap:34px;padding-top:30px;border-top:1px solid var(--line)}
+  .meta-row div span{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+  .meta-row div strong{font-size:15px;font-weight:700}
 
-        body * {
-            background-color: transparent;
-        }
+  .portrait{position:relative;aspect-ratio:4/5;max-width:440px;margin-left:auto;width:100%}
+  .portrait .ring{position:absolute;inset:-4px;border-radius:20px;background:var(--grad);opacity:.9;filter:blur(0);animation:spin-hue 10s linear infinite}
+  .portrait .frame{position:absolute;inset:0;border-radius:17px;overflow:hidden;background:var(--ink-3);border:3px solid var(--ink)}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(1.05) contrast(1.04)}
+  .portrait .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(6,10,20,.85) 100%)}
+  .portrait .cap{position:absolute;left:24px;right:24px;bottom:24px;z-index:2}
+  .portrait .cap b{display:block;font-family:'Fraunces',serif;font-size:24px;font-weight:600;line-height:1.15}
+  .portrait .cap small{color:var(--muted);font-size:13px}
+  .chip-float{position:absolute;z-index:3;background:rgba(11,18,34,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:16px;padding:12px 16px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:10px;box-shadow:0 20px 40px -20px rgba(0,0,0,.8)}
+  .chip-float i{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint);font-style:normal}
+  .chip-1{top:12%;left:-46px;animation:float 6s ease-in-out infinite}
+  .chip-2{bottom:22%;right:-34px;animation:float 7s ease-in-out infinite reverse}
+  .chip-2 i{background:var(--amber);box-shadow:0 0 12px var(--amber)}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @keyframes spin-hue{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}
 
-        section {
-            position: relative;
-        }
+  /* Marquee */
+  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;overflow:hidden;background:var(--ink-2)}
+  .marquee-track{display:flex;gap:56px;width:max-content;animation:marq 40s linear infinite}
+  .marquee-track span{font-family:'Fraunces',serif;font-size:24px;color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:56px}
+  .marquee-track span::after{content:"✦";font-style:normal;font-size:14px;color:var(--violet)}
+  @keyframes marq{to{transform:translateX(-50%)}}
 
-        h1, h2, h3, h4 {
-            font-family: 'Barlow', sans-serif;
-            font-weight: 900;
-        }
+  /* Speaker */
+  .speaker-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start;margin-top:56px}
+  .quote-big{font-family:'Fraunces',serif;font-size:clamp(26px,2.8vw,36px);line-height:1.25;font-weight:400;font-style:normal;color:var(--text);position:relative;padding-left:28px;border-left:3px solid;border-image:var(--grad) 1}
+  .bio p{color:var(--muted);font-size:17px;margin-bottom:18px}
+  .bio p strong{color:var(--text)}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-top:40px}
+  .stat{background:var(--ink);padding:28px 26px}
+  .stat b{display:block;font-family:'Fraunces',serif;font-size:46px;font-weight:600;line-height:1;margin-bottom:8px}
+  .stat span{color:var(--muted);font-size:14px}
+  .creds{margin-top:40px;display:grid;gap:12px}
+  .cred{display:flex;gap:16px;align-items:flex-start;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.015);transition:.25s}
+  .cred:hover{border-color:rgba(139,92,246,.45);background:rgba(139,92,246,.05)}
+  .cred .ic{flex:0 0 38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:18px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25)}
+  .cred b{display:block;font-size:15px}
+  .cred small{color:var(--muted);font-size:13.5px}
+  .books{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .book{padding:20px;border-radius:14px;background:linear-gradient(160deg,rgba(245,176,65,.10),rgba(245,176,65,.02));border:1px solid rgba(245,176,65,.25)}
+  .book b{font-family:'Fraunces',serif;font-weight:600;font-size:17px;line-height:1.25;display:block;margin-bottom:6px}
+  .book small{color:var(--muted);font-size:12.5px}
 
-        .gradient-fantastico {
-            background: linear-gradient(135deg, #f97316 0%, #10b981 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+  /* Duality */
+  .duality{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+  .dcard{border-radius:24px;padding:40px;border:1px solid var(--line);position:relative;overflow:hidden}
+  .dcard h3{font-family:'Fraunces',serif;font-size:28px;font-weight:600;margin:14px 0 18px}
+  .dcard ul{list-style:none;display:grid;gap:14px}
+  .dcard li{color:var(--muted);padding-left:26px;position:relative}
+  .dcard li::before{content:"";position:absolute;left:0;top:10px;width:12px;height:2px;background:currentColor}
+  .d-pos{background:linear-gradient(160deg,rgba(52,211,153,.10),rgba(6,10,20,0) 60%)}
+  .d-pos .tag{color:var(--mint)} .d-pos li::before{background:var(--mint)}
+  .d-neg{background:linear-gradient(160deg,rgba(251,113,133,.10),rgba(6,10,20,0) 60%)}
+  .d-neg .tag{color:var(--coral)} .d-neg li::before{background:var(--coral)}
+  .tag{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
 
-        .text-autonomous {
-            color: #06b6d4;
-        }
+  /* Data */
+  .data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+  .dat{padding:36px 30px;border-radius:24px;background:var(--ink-2);border:1px solid var(--line);position:relative;overflow:hidden}
+  .dat .num{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(56px,6vw,80px);line-height:1;letter-spacing:-.03em}
+  .dat h4{font-size:17px;margin:14px 0 8px}
+  .dat p{color:var(--muted);font-size:14.5px}
+  .bar{height:6px;background:rgba(255,255,255,.06);border-radius:6px;margin-top:22px;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:6px;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+  .note{margin-top:22px;color:var(--dim);font-size:13px}
 
-        /* Autonomous Background */
-        .autonomous-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
+  /* Scale */
+  .scale{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:end}
+  .step{border-radius:22px;border:1px solid var(--line);background:var(--ink-2);padding:28px 24px;position:relative;transition:transform .3s,border-color .3s}
+  .step:hover{transform:translateY(-6px)}
+  .step:nth-child(1){min-height:340px}
+  .step:nth-child(2){min-height:380px}
+  .step:nth-child(3){min-height:420px}
+  .step:nth-child(4){min-height:470px;background:linear-gradient(170deg,rgba(139,92,246,.22),rgba(34,211,238,.08) 60%,var(--ink-2));border-color:rgba(139,92,246,.55);box-shadow:0 30px 80px -30px rgba(139,92,246,.6)}
+  .step .lvl{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.15em;color:var(--dim)}
+  .step h3{font-family:'Fraunces',serif;font-size:24px;font-weight:600;line-height:1.15;margin:12px 0 14px}
+  .step dl{display:grid;gap:12px}
+  .step dt{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--dim)}
+  .step dd{font-size:14px;color:var(--muted)}
+  .risk{display:inline-block;margin-top:18px;font-size:12px;font-weight:800;padding:6px 12px;border-radius:999px}
+  .r-mid{background:rgba(245,176,65,.12);color:var(--amber)}
+  .r-high{background:rgba(251,113,133,.14);color:var(--coral)}
+  .r-win{background:rgba(52,211,153,.14);color:var(--mint)}
+  .step:nth-child(4) .lvl{color:var(--cyan)}
 
-        .radar-grid {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(6, 182, 212, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: grid-radar 22s linear infinite;
-        }
+  .danger{margin-top:72px;border-radius:28px;padding:56px;background:
+      radial-gradient(600px 300px at 0% 0%,rgba(251,113,133,.14),transparent 60%),
+      radial-gradient(600px 300px at 100% 100%,rgba(52,211,153,.12),transparent 60%),var(--ink-2);border:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+  .danger .big{font-family:'Fraunces',serif;font-size:120px;line-height:.8;font-weight:800}
+  .danger p{font-family:'Fraunces',serif;font-size:clamp(22px,2.4vw,30px);line-height:1.35}
+  .danger p .bad{color:var(--coral)} .danger p .good{color:var(--mint)}
 
-        @keyframes grid-radar {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
+  /* Compare */
+  .compare{margin-top:56px;border:1px solid var(--line);border-radius:24px;overflow:hidden}
+  .crow{display:grid;grid-template-columns:.8fr 1fr 1fr;border-top:1px solid var(--line)}
+  .crow:first-child{border-top:0}
+  .crow > div{padding:26px 28px;font-size:15px}
+  .crow .k{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center}
+  .crow .a{color:var(--muted);background:rgba(255,255,255,.012)}
+  .crow .b{color:var(--text);background:linear-gradient(90deg,rgba(139,92,246,.10),rgba(34,211,238,.05))}
+  .chead > div{padding:22px 28px;font-weight:800;font-size:15px}
+  .chead .a{color:var(--amber)} .chead .b{color:var(--cyan)}
 
-        .convoy-node {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background: radial-gradient(circle, #f97316, transparent);
-            border-radius: 50%;
-            animation: node-convoy 3.5s infinite;
-        }
+  /* Skills */
+  .skills{margin-top:56px;display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+  .skill{grid-column:span 2;padding:32px 28px;border-radius:22px;border:1px solid var(--line);background:var(--ink-2);transition:.3s;position:relative;overflow:hidden}
+  .skill:nth-child(4),.skill:nth-child(5){grid-column:span 3}
+  .skill::before{content:"";position:absolute;inset:0;background:var(--grad);opacity:0;transition:.3s;mask:linear-gradient(#000,transparent 50%);-webkit-mask:linear-gradient(#000,transparent 50%)}
+  .skill:hover::before{opacity:.10}
+  .skill:hover{border-color:rgba(34,211,238,.4)}
+  .skill .n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--cyan)}
+  .skill h4{font-family:'Fraunces',serif;font-size:23px;font-weight:600;margin:14px 0 10px;position:relative}
+  .skill p{color:var(--muted);font-size:15px;position:relative}
+  .skill .out{display:block;margin-top:14px;font-size:13px;color:var(--amber);font-weight:700;position:relative}
 
-        @keyframes node-convoy {
-            0%, 100% {
-                box-shadow: 0 0 18px rgba(249, 115, 22, 0.5);
-                opacity: 0.6;
-                transform: scale(1);
-            }
-            50% {
-                box-shadow: 0 0 30px rgba(16, 185, 129, 0.8);
-                opacity: 1;
-                transform: scale(1.4);
-            }
-        }
+  /* Triad */
+  .triad-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:40px}
+  .triad{position:relative;aspect-ratio:1;max-width:460px;width:100%;margin:0 auto}
+  .triad .c{position:absolute;width:58%;aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;mix-blend-mode:screen;font-weight:800;font-size:16px;padding:20px}
+  .triad .c1{top:0;left:21%;background:radial-gradient(circle at 50% 35%,rgba(34,211,238,.55),rgba(34,211,238,.12) 70%);align-items:flex-start;padding-top:22%}
+  .triad .c2{bottom:2%;left:0;background:radial-gradient(circle at 35% 60%,rgba(139,92,246,.6),rgba(139,92,246,.12) 70%);justify-content:flex-start;padding-left:14%;padding-top:20%}
+  .triad .c3{bottom:2%;right:0;background:radial-gradient(circle at 65% 60%,rgba(245,176,65,.55),rgba(245,176,65,.12) 70%);justify-content:flex-end;padding-right:16%;padding-top:20%}
+  .triad .core{position:absolute;top:54%;left:50%;transform:translate(-50%,-50%);font-family:'Fraunces',serif;font-size:15px;text-align:center;color:#fff;line-height:1.2;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+  .intel{display:grid;gap:16px;margin-top:30px}
+  .intel div{display:grid;grid-template-columns:14px 1fr;gap:16px;align-items:start}
+  .intel i{width:14px;height:14px;border-radius:50%;margin-top:6px}
+  .intel b{display:block;font-size:18px}
+  .intel span{color:var(--muted);font-size:15px}
 
-        .trajectory-line {
-            position: absolute;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.4), rgba(6, 182, 212, 0.4), transparent);
-            animation: line-trajectory 7s infinite;
-        }
+  /* Conclusions */
+  .concl{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .cc{padding:36px 32px;border-radius:24px;border:1px solid var(--line);background:var(--ink-2)}
+  .cc .n{font-family:'Fraunces',serif;font-size:56px;font-weight:800;line-height:1;opacity:.9}
+  .cc h4{font-family:'Fraunces',serif;font-size:24px;font-weight:600;margin:16px 0 12px;line-height:1.2}
+  .cc p{color:var(--muted);font-size:15px}
 
-        @keyframes line-trajectory {
-            0%, 100% {
-                opacity: 0.2;
-                transform: scaleX(0.9);
-            }
-            50% {
-                opacity: 0.7;
-                transform: scaleX(1);
-            }
-        }
+  /* Final CTA */
+  .final{padding:140px 0;text-align:center;position:relative;overflow:hidden}
+  .final::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 420px at 50% 100%,rgba(139,92,246,.28),transparent 70%),radial-gradient(600px 300px at 50% 0%,rgba(34,211,238,.10),transparent 70%)}
+  .final .wrap{position:relative}
+  .final h2{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(40px,6vw,80px);line-height:1;letter-spacing:-.03em;margin:22px auto 26px;max-width:900px}
+  .final h2 em{font-weight:400;font-style:normal}
+  .final p{color:var(--muted);font-size:19px;max-width:640px;margin:0 auto 44px}
+  .final .acts{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
 
-        .detection-ring {
-            position: absolute;
-            border-radius: 50%;
-            border: 2px solid rgba(6, 182, 212, 0.15);
-            animation: ring-detection 13s infinite;
-        }
+  footer.ft{border-top:1px solid var(--line);padding:40px 0;background:var(--ink)}
+  footer.ft .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;color:var(--dim);font-size:13px}
+  footer.ft b{color:var(--text)}
+  footer.ft .motto{font-family:'Fraunces',serif;font-size:16px;color:var(--muted)}
 
-        @keyframes ring-detection {
-            0%, 100% {
-                transform: scale(0.9);
-                opacity: 0.5;
-            }
-            50% {
-                transform: scale(1.1);
-                opacity: 0.2;
-            }
-        }
+  /* Reveal */
+  .js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+  .js .rv.in{opacity:1;transform:none}
+  .d1{transition-delay:.08s!important}.d2{transition-delay:.16s!important}.d3{transition-delay:.24s!important}.d4{transition-delay:.32s!important}
 
-        .v2v-pulse {
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent);
-            animation: pulse-v2v 6s infinite;
-        }
-
-        @keyframes pulse-v2v {
-            0%, 100% {
-                opacity: 0.2;
-            }
-            50% {
-                opacity: 0.7;
-            }
-        }
-
-        /* Fade animations */
-        .auto-rise {
-            opacity: 0;
-            transform: translateY(40px);
-            animation: autoRise 0.8s forwards;
-        }
-
-        @keyframes autoRise {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fantastico-emerge {
-            opacity: 0;
-            transform: scale(0.95);
-            animation: fantasticoEmerge 0.8s forwards;
-        }
-
-        @keyframes fantasticoEmerge {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Delays */
-        .delay-1 { animation-delay: 0.15s; }
-        .delay-2 { animation-delay: 0.3s; }
-        .delay-3 { animation-delay: 0.45s; }
-        .delay-4 { animation-delay: 0.6s; }
-        .delay-5 { animation-delay: 0.75s; }
-        .delay-6 { animation-delay: 0.9s; }
-        .delay-7 { animation-delay: 1.05s; }
-
-        /* Autonomous Card */
-        .auto-card {
-            background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(2, 132, 199, 0.4));
-            border: 2px solid rgba(6, 182, 212, 0.3);
-            backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .auto-card::before {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, #f97316, #10b981, #06b6d4);
-            transform: scaleY(0);
-            transition: transform 0.4s;
-        }
-
-        .auto-card:hover::before {
-            transform: scaleY(1);
-        }
-
-        .auto-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(16, 185, 129, 0.6);
-            box-shadow: 
-                0 0 40px rgba(6, 182, 212, 0.3),
-                0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Racing Button */
-        .btn-auto {
-            background: linear-gradient(135deg, #f97316, #10b981);
-            box-shadow: 
-                0 0 30px rgba(249, 115, 22, 0.5),
-                0 8px 25px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s;
-        }
-
-        .btn-auto:hover {
-            box-shadow: 
-                0 0 50px rgba(16, 185, 129, 0.7),
-                0 12px 35px rgba(0, 0, 0, 0.4);
-            transform: translateY(-3px);
-        }
-
-        .btn-outline-auto {
-            border: 2px solid #f97316;
-            color: #f97316;
-            background: rgba(249, 115, 22, 0.05);
-            transition: all 0.4s;
-        }
-
-        .btn-outline-auto:hover {
-            background: rgba(249, 115, 22, 0.15);
-            box-shadow: 0 0 35px rgba(249, 115, 22, 0.4);
-            border-color: #10b981;
-        }
-
-        /* Profile Frame */
-        .profile-auto {
-            border: 3px solid #06b6d4;
-            box-shadow: 
-                0 0 50px rgba(6, 182, 212, 0.5),
-                inset 0 0 30px rgba(2, 132, 199, 0.1);
-        }
-
-        /* Badge */
-        .badge-auto {
-            background: linear-gradient(135deg, #f97316, #10b981);
-            box-shadow: 0 0 25px rgba(249, 115, 22, 0.6);
-        }
-
-        /* Override GHL styles */
-        div[class*="hl_page-preview"],
-        .hl_page-preview--content,
-        #content,
-        main,
-        body > div,
-        body > section,
-        #root,
-        #app,
-        [id*="content"],
-        [class*="container"],
-        [class*="wrapper"] {
-            background-color: #0a1929 !important;
-        }
-
-        /* Link styles */
-        a[href] {
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        a[href]:hover {
-            text-decoration: none;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0a1929;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #f97316, #10b981);
-            border-radius: 5px;
-        }
-
-        /* Tag style */
-        .tag-auto {
-            background: rgba(249, 115, 22, 0.15);
-            border: 1px solid rgba(249, 115, 22, 0.4);
-            color: #fed7aa;
-            padding: 8px 24px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        /* Icon glow */
-        .icon-auto {
-            filter: drop-shadow(0 0 12px rgba(249, 115, 22, 0.6));
-        }
-
-        /* Stat box */
-        .stat-auto {
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(2, 132, 199, 0.3));
-            border: 1px solid rgba(249, 115, 22, 0.3);
-            padding: 1.5rem;
-            border-radius: 12px;
-        }
-
-        /* Divider */
-        .auto-divider {
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #f97316, #10b981, #06b6d4, transparent);
-            margin: 0 auto;
-            box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
-        }
-
-        /* Metric big */
-        .metric-big {
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(2, 132, 199, 0.3));
-            border: 2px solid rgba(249, 115, 22, 0.4);
-            padding: 2.5rem 2rem;
-            border-radius: 16px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .metric-big:hover {
-            border-color: rgba(16, 185, 129, 0.6);
-            box-shadow: 0 0 35px rgba(249, 115, 22, 0.3);
-            transform: scale(1.05);
-        }
-
-        .metric-value {
-            font-size: 4rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #f97316, #10b981);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
-            font-family: 'Barlow', sans-serif;
-        }
-
-        /* Academic badge */
-        .academic-badge {
-            background: rgba(6, 182, 212, 0.15);
-            border: 1px solid rgba(6, 182, 212, 0.4);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            color: #7dd3fc;
-            font-weight: 700;
-            display: inline-block;
-        }
-
-        /* Tech feature */
-        .tech-feature {
-            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(2, 132, 199, 0.3));
-            border: 2px solid rgba(6, 182, 212, 0.3);
-            padding: 1.5rem;
-            border-radius: 12px;
-            transition: all 0.3s;
-        }
-
-        .tech-feature:hover {
-            border-color: rgba(249, 115, 22, 0.5);
-            box-shadow: 0 0 25px rgba(6, 182, 212, 0.3);
-        }
-
-        /* Collaboration logo */
-        .collab-box {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(2, 132, 199, 0.2));
-            border: 2px solid rgba(16, 185, 129, 0.3);
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        /* El Fantástico box */
-        .fantastico-box {
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(16, 185, 129, 0.15));
-            border: 3px solid rgba(249, 115, 22, 0.4);
-            padding: 3rem;
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .fantastico-box::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(249, 115, 22, 0.1), transparent 70%);
-            animation: fantastico-aura 5s infinite;
-        }
-
-        @keyframes fantastico-aura {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(5%, 5%) scale(1.1); }
-        }
-
-        /* Challenge box */
-        .challenge-box {
-            background: linear-gradient(135deg, rgba(100, 116, 139, 0.2), rgba(2, 132, 199, 0.3));
-            border-left: 4px solid #64748b;
-            padding: 1.5rem;
-            border-radius: 0 12px 12px 0;
-        }
-
-        /* Result highlight */
-        .result-highlight {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.15));
-            border: 3px solid rgba(16, 185, 129, 0.5);
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-        }
-
-        /* Year badge */
-        .year-badge {
-            background: rgba(249, 115, 22, 0.15);
-            border: 2px solid rgba(249, 115, 22, 0.4);
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            font-size: 1.5rem;
-            color: #fed7aa;
-            font-weight: 900;
-            display: inline-block;
-        }
-    </style>
+  @media (max-width:980px){
+    .hero-grid,.speaker-grid,.triad-wrap{grid-template-columns:1fr;gap:56px}
+    .portrait{margin:0 auto;max-width:380px}
+    .chip-1{left:-10px}.chip-2{right:-10px}
+    .duality,.data-grid,.concl{grid-template-columns:1fr}
+    .scale{grid-template-columns:1fr 1fr}
+    .step{min-height:auto!important}
+    .skills{grid-template-columns:1fr}
+    .skill,.skill:nth-child(4),.skill:nth-child(5){grid-column:auto}
+    .danger{grid-template-columns:1fr;padding:40px 30px}
+    .danger .big{font-size:80px}
+  }
+  @media (max-width:640px){
+    section.sec{padding:84px 0}
+    .scale{grid-template-columns:1fr}
+    .crow{grid-template-columns:1fr}
+    .crow .k{padding-bottom:0}
+    .chead{display:none!important}
+    .crow .a::before{content:"Hoy · ";color:var(--amber);font-weight:800}
+    .crow .b::before{content:"Futuro · ";color:var(--cyan);font-weight:800}
+    .stats{grid-template-columns:1fr 1fr}
+    .books{grid-template-columns:1fr}
+    .top-cta{display:none}
+    .dcard{padding:30px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .marquee-track,.chip-float,.portrait .ring{animation:none}
+    .js .rv{opacity:1;transform:none;transition:none}
+  }
+</style>
 </head>
 <body>
-    <!-- Autonomous Background -->
-    <div class="autonomous-bg">
-        <div class="radar-grid"></div>
-        
-        <!-- Convoy Nodes -->
-        <div class="convoy-node" style="top: 20%; left: 18%; animation-delay: 0s;"></div>
-        <div class="convoy-node" style="top: 40%; left: 72%; animation-delay: 1s;"></div>
-        <div class="convoy-node" style="top: 60%; left: 28%; animation-delay: 2s;"></div>
-        <div class="convoy-node" style="top: 78%; left: 68%; animation-delay: 1.5s;"></div>
-        <div class="convoy-node" style="top: 48%; right: 18%; animation-delay: 2.5s;"></div>
-        
-        <!-- Trajectory Lines -->
-        <div class="trajectory-line" style="width: 300px; top: 25%; left: 15%;"></div>
-        <div class="trajectory-line" style="width: 280px; top: 55%; right: 10%; animation-delay: 2.5s;"></div>
-        <div class="trajectory-line" style="width: 260px; top: 72%; left: 18%; animation-delay: 5s;"></div>
-        
-        <!-- Detection Rings -->
-        <div class="detection-ring" style="width: 300px; height: 300px; top: 15%; right: 10%;"></div>
-        <div class="detection-ring" style="width: 260px; height: 260px; bottom: 20%; left: 12%; animation-delay: 6s;"></div>
-        
-        <!-- V2V Pulses -->
-        <div class="v2v-pulse" style="top: 30%;"></div>
-        <div class="v2v-pulse" style="top: 60%; animation-delay: 3s;"></div>
+<script>document.documentElement.classList.add('js');</script>
+<div class="nv">
+
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <div class="grid-bg"></div>
+    <div class="topbar">
+      <div class="wrap">
+        <a class="brand" href="https://iaExpo.ai" target="_blank" rel="noopener noreferrer"><b>IA EXPO</b> INTERNACIONAL 2027</a>
+        <a class="top-cta" href="https://iaExpo.ai/#tickets" target="_blank" rel="noopener noreferrer">Boletos →</a>
+      </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="relative z-10" style="background-color: #0a1929 !important;">
-        <!-- Hero Section -->
-        <section class="min-h-screen flex items-center justify-center px-6 py-20" style="background-color: #0a1929 !important;">
-            <div class="max-w-7xl mx-auto">
-                <!-- Top Badge -->
-                <div class="text-center mb-8 auto-rise">
-                    <span class="tag-auto inline-block">
-                        🚗 IA Expo Internacional
-                    </span>
-                </div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow rv">Sesión magistral · Movilidad inteligente</span>
+        <h1 class="rv d1">Driving the Future: rumbo a la <span class="grad-text">movilidad autónoma</span> en México</h1>
+        <p class="sub rv d2">El primer vehículo autónomo en recorrer México —más de 440 km a velocidad récord en La Carrera Panamericana— demuestra el camino: <strong>validar en condiciones extremas para lograr una movilidad segura, limpia y para todos en lo cotidiano.</strong></p>
+        <div class="hero-actions rv d3">
+          <a class="btn btn-primary" href="https://iaExpo.ai/#tickets" target="_blank" rel="noopener noreferrer">Asegura tu lugar <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="https://iaexpo.github.io/2027.Articulos/Acta.DrJorgeLozoya.MovilidadInteligente.pdf" target="_blank" rel="noopener noreferrer" download>Descargar el Acta <span class="arr">↓</span></a>
+        </div>
+        <div class="meta-row rv d4">
+          <div><span>Autor</span><strong>Dr. Jorge de Jesús Lozoya Santos</strong></div>
+          <div><span>Organización</span><strong>Tecnológico de Monterrey</strong></div>
+          <div><span>Fecha</span><strong>Viernes 29 de enero · 10:10</strong></div>
+          <div><span>Sede</span><strong>Ciudad de México</strong></div>
+        </div>
+      </div>
 
-                <!-- Main Title -->
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-center mb-6 leading-tight auto-rise delay-1">
-                    <span class="text-white">Vehículos Autónomos</span><br>
-                    <span class="gradient-fantastico">en el Entorno Social</span>
-                </h1>
-
-                <div class="auto-divider mb-8 auto-rise delay-2"></div>
-
-                <p class="text-2xl md:text-3xl text-center text-orange-300 mb-4 max-w-4xl mx-auto auto-rise delay-2 font-bold">
-                    El Fantástico: Movilidad Segura, Limpia y Para Todos
-                </p>
-
-                <p class="text-xl text-center text-gray-400 mb-12 max-w-3xl mx-auto auto-rise delay-3">
-                    440 km en modo totalmente autónomo. Carrera Panamericana 2025.
-                </p>
-
-                <!-- CTA Button -->
-                <div class="flex justify-center mb-20 auto-rise delay-4">
-                    <a href="https://iaExpo.ai/iax-registro" target="_blank" rel="noopener noreferrer" class="btn-auto text-white px-12 py-5 rounded-full font-bold text-lg inline-block text-center">
-                        Descubrir la Innovación
-                    </a>
-                </div>
-
-                <!-- Profile Section -->
-                <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mt-16">
-                    <!-- Image -->
-                    <div class="fantastico-emerge delay-5">
-                        <div class="relative">
-                            <div class="profile-auto rounded-2xl overflow-hidden">
-                                <img 
-                                    src="https://storage.googleapis.com/msgsndr/5RXj1eDQIjNx7eCHKaZA/media/6940a5bd96e7537d7fee3463.jpg"
-                                    alt="Dr. Jorge de Jesús Lozoya Santos"
-                                    class="w-full h-auto"
-                                />
-                            </div>
-                            <div class="absolute -bottom-4 -right-4 badge-auto rounded-full px-6 py-3">
-                                <div class="text-sm font-bold text-white">Dr.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Info -->
-                    <div class="auto-rise delay-6">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-                            Dr. Jorge de Jesús Lozoya Santos
-                        </h2>
-                        
-                        <div class="mb-6">
-                            <span class="text-autonomous text-lg font-bold">Desarrollo Negocios Nacionales</span><br>
-                            <span class="text-gray-400 text-base">Tecnológico de Monterrey</span>
-                        </div>
-                        
-                        <div class="space-y-4 text-base text-gray-300 leading-relaxed">
-                            <p>
-                                <span class="text-autonomous font-bold">20+ años</span> en sistemas embebidos, control automático y movilidad inteligente. Líder del <span class="text-autonomous font-semibold">Proyecto Insignia en Movilidad</span>.
-                            </p>
-                            <p>
-                                Profesor investigador. SNI Nivel I. Academia Mexicana de Ciencias. <span class="text-autonomous font-bold">50+ publicaciones científicas</span>.
-                            </p>
-                            <div class="flex gap-2 flex-wrap">
-                                <span class="academic-badge">🎓 SNI Nivel I</span>
-                                <span class="academic-badge">🔬 Academia</span>
-                                <span class="academic-badge">📚 50+ Pub</span>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 mt-8">
-                            <div class="stat-auto text-center">
-                                <div class="text-2xl font-bold gradient-fantastico">Tec</div>
-                                <div class="text-xs text-gray-500">Monterrey</div>
-                            </div>
-                            <div class="stat-auto text-center">
-                                <div class="text-2xl font-bold gradient-fantastico">Movilidad</div>
-                                <div class="text-xs text-gray-500">Inteligente</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- El Fantástico -->
-        <section class="py-20 px-6" style="background: linear-gradient(to bottom, #0a1929, #0284c7) !important;">
-            <div class="max-w-5xl mx-auto">
-                <div class="fantastico-box auto-rise">
-                    <div class="relative z-10">
-                        <div class="mb-6 text-center">
-                            <img src="https://di-uploads-pod28.dealerinspire.com/maseratioffortlauderdale/uploads/2024/12/gc-folgore-model-info-v01.png" alt="Maserati GranCabrio Folgore" class="mx-auto max-w-md w-full h-auto rounded-lg" style="filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.6));">
-                        </div>
-                        <h2 class="text-4xl md:text-5xl font-black mb-6 text-center">
-                            <span class="gradient-fantastico">El Fantástico</span>
-                        </h2>
-                        
-                        <div class="auto-divider my-6"></div>
-                        
-                        <p class="text-2xl text-white font-bold mb-4 text-center">
-                            Maserati GranCabrio Folgore 2025
-                        </p>
-                        
-                        <p class="text-xl text-gray-200 max-w-3xl mx-auto text-center mb-6">
-                            Modificado por estudiantes mexicanos. Decorado con <span class="text-orange-400 font-bold">motivos de alebrijes</span>. Vehículo autónomo que simboliza movilidad segura, limpia y para todos.
-                        </p>
-
-                        <div class="flex flex-wrap gap-3 justify-center">
-                            <span class="tag-auto">🇲🇽 Mexicano</span>
-                            <span class="tag-auto">🎨 Alebrijes</span>
-                            <span class="tag-auto">⚡ Eléctrico</span>
-                            <span class="tag-auto">🤖 Autónomo</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Big Metrics -->
-        <section class="py-20 px-6" style="background-color: #0a1929 !important;">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 auto-rise">
-                    <h2 class="text-4xl md:text-5xl font-black mb-6">
-                        <span class="gradient-fantastico">Hito Histórico</span>
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="metric-big auto-rise delay-1">
-                        <div class="metric-value mb-3">440</div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Kilómetros</h3>
-                        <p class="text-sm text-gray-400">Modo autónomo</p>
-                    </div>
-
-                    <div class="metric-big auto-rise delay-2">
-                        <div class="metric-value mb-3">3.5K</div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Kilómetros</h3>
-                        <p class="text-sm text-gray-400">Carrera completa</p>
-                    </div>
-
-                    <div class="metric-big auto-rise delay-3">
-                        <div class="metric-value mb-3">75</div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Años</h3>
-                        <p class="text-sm text-gray-400">Carrera Panamericana</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Panamericana -->
-        <section class="py-20 px-6" style="background: linear-gradient(to bottom, #0a1929, #0284c7) !important;">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 auto-rise">
-                    <h2 class="text-4xl md:text-5xl font-black mb-6">
-                        <span class="text-white">Carrera </span><span class="gradient-fantastico">Panamericana</span>
-                    </h2>
-                    <div class="mt-6">
-                        <span class="year-badge">75ª Edición 2025</span>
-                    </div>
-                </div>
-
-                <div class="auto-card rounded-2xl p-10 auto-rise delay-1">
-                    <p class="text-xl text-white mb-6 font-bold text-center">
-                        Única competencia de automovilismo deportivo con etapas de velocidad en carretera abierta
-                    </p>
-                    
-                    <p class="text-lg text-gray-300 text-center mb-6">
-                        Recorriendo más de <span class="text-orange-400 font-bold">3,500 km</span> de sur a norte por México
-                    </p>
-
-                    <div class="grid md:grid-cols-2 gap-6 mt-8">
-                        <div class="collab-box">
-                            <h3 class="text-lg font-bold text-white mb-2">Inicio Simbólico</h3>
-                            <p class="text-sm text-gray-300">11 octubre - Palacio Bellas Artes CDMX</p>
-                        </div>
-                        <div class="collab-box">
-                            <h3 class="text-lg font-bold text-white mb-2">Salida Oficial</h3>
-                            <p class="text-sm text-gray-300">12 octubre 7:00 am - Campus Santa Fe</p>
-                        </div>
-                    </div>
-
-                    <p class="text-center text-cyan-300 mt-8 font-bold text-lg">
-                        Transformada en "Laboratorio en Movimiento" por primera vez en 75 años
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technology -->
-        <section class="py-20 px-6" style="background-color: #0a1929 !important;">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 auto-rise">
-                    <h2 class="text-4xl md:text-5xl font-black mb-6">
-                        <span class="gradient-fantastico">Tecnología de Vanguardia</span>
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="tech-feature auto-rise delay-1">
-                        <div class="text-4xl mb-3 icon-auto">📡</div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Sensores Láser + Radares</h3>
-                        <p class="text-gray-300">Detección perimetral avanzada</p>
-                    </div>
-
-                    <div class="tech-feature auto-rise delay-2">
-                        <div class="text-4xl mb-3 icon-auto">🧠</div>
-                        <h3 class="text-xl font-bold mb-2 text-white">IA de Percepción</h3>
-                        <p class="text-gray-300">Procesamiento en tiempo real</p>
-                    </div>
-
-                    <div class="tech-feature auto-rise delay-3">
-                        <div class="text-4xl mb-3 icon-auto">🤝</div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Interacción Cognitiva</h3>
-                        <p class="text-gray-300">Hombre-vehículo inteligente</p>
-                    </div>
-
-                    <div class="tech-feature auto-rise delay-4">
-                        <div class="text-4xl mb-3 icon-auto">🔄</div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Comunicación V2V</h3>
-                        <p class="text-gray-300">Vehículo-a-vehículo en tiempo real</p>
-                    </div>
-                </div>
-
-                <div class="auto-card rounded-xl p-8 mt-8 auto-rise delay-5">
-                    <p class="text-center text-lg text-gray-200">
-                        Recopilando datos continuos sobre <span class="text-autonomous font-bold">tráfico, seguridad vial y planificación urbana</span> para entornos mexicanos complejos
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Collaboration -->
-        <section class="py-20 px-6" style="background: linear-gradient(to bottom, #0a1929, #0284c7) !important;">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 auto-rise">
-                    <h2 class="text-4xl md:text-5xl font-black mb-6">
-                        <span class="text-white">Colaboración </span><span class="gradient-fantastico">Estratégica</span>
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="collab-box auto-rise delay-1">
-                        <div class="text-4xl mb-3">🏫</div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Tecnológico de Monterrey</h3>
-                        <p class="text-sm text-gray-300">Proyecto Insignia en Movilidad</p>
-                    </div>
-
-                    <div class="collab-box auto-rise delay-2">
-                        <div class="text-4xl mb-3">🇮🇹</div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Politécnico di Milano</h3>
-                        <p class="text-sm text-gray-300">AIDA Team - Dr. Sergio Savaresi</p>
-                    </div>
-
-                    <div class="collab-box auto-rise delay-3">
-                        <div class="text-4xl mb-3">🏎️</div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Maserati México</h3>
-                        <p class="text-sm text-gray-300">Rodnei Silva - Director</p>
-                    </div>
-
-                    <div class="collab-box auto-rise delay-4">
-                        <div class="text-4xl mb-3">🏁</div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Carrera Panamericana</h3>
-                        <p class="text-sm text-gray-300">75ª edición histórica</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Challenges -->
-        <section class="py-20 px-6" style="background-color: #0a1929 !important;">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 auto-rise">
-                    <h2 class="text-4xl md:text-5xl font-black mb-6">
-                        <span class="gradient-fantastico">Desafíos Superados</span>
-                    </h2>
-                </div>
-
-                <div class="space-y-4">
-                    <div class="challenge-box auto-rise delay-1">
-                        <h3 class="text-lg font-bold text-white mb-2">Realidad Vial Mexicana</h3>
-                        <p class="text-gray-300">Terrenos geográficos y climáticos variados, tráfico impredecible</p>
-                    </div>
-
-                    <div class="challenge-box auto-rise delay-2">
-                        <h3 class="text-lg font-bold text-white mb-2">Etapas Alta Velocidad</h3>
-                        <p class="text-gray-300">Carretera abierta con condiciones extremas de racing</p>
-                    </div>
-
-                    <div class="challenge-box auto-rise delay-3">
-                        <h3 class="text-lg font-bold text-white mb-2">Sintonización Conjunta</h3>
-                        <p class="text-gray-300">Investigadores italianos y mexicanos calibrando autonomía</p>
-                    </div>
-
-                    <div class="challenge-box auto-rise delay-4">
-                        <h3 class="text-lg font-bold text-white mb-2">Convoyes con Intervalos</h3>
-                        <p class="text-gray-300">Pruebas exhaustivas con 30 segundos de separación</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Results -->
-        <section class="py-20 px-6" style="background: linear-gradient(to bottom, #0a1929, #0284c7) !important;">
-            <div class="max-w-5xl mx-auto">
-                <div class="text-center mb-16 auto-rise">
-                    <h2 class="text-4xl md:text-5xl font-black mb-6">
-                        <span class="text-white">Éxito </span><span class="gradient-fantastico">Rotundo</span>
-                    </h2>
-                </div>
-
-                <div class="result-highlight auto-rise delay-1 mb-8">
-                    <div class="text-6xl mb-4">✅</div>
-                    <h3 class="text-3xl font-bold mb-4 text-white">440 km Autónomos</h3>
-                    <p class="text-xl text-gray-200">
-                        Convoy cubrió la distancia en <span class="text-emerald-400 font-bold">modo totalmente autónomo</span>, demostrando fiabilidad en carreteras mexicanas
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="auto-card p-6 rounded-xl text-center auto-rise delay-2">
-                        <div class="text-3xl mb-3 icon-auto">🌎</div>
-                        <h4 class="font-bold text-white mb-2">Referente Global</h4>
-                        <p class="text-sm text-gray-400">México en innovación automotriz</p>
-                    </div>
-                    <div class="auto-card p-6 rounded-xl text-center auto-rise delay-3">
-                        <div class="text-3xl mb-3 icon-auto">📊</div>
-                        <h4 class="font-bold text-white mb-2">Datos Reales</h4>
-                        <p class="text-sm text-gray-400">Validación en condiciones extremas</p>
-                    </div>
-                    <div class="auto-card p-6 rounded-xl text-center auto-rise delay-4">
-                        <div class="text-3xl mb-3 icon-auto">🏎️</div>
-                        <h4 class="font-bold text-white mb-2">Legado Cultural</h4>
-                        <p class="text-sm text-gray-400">Carrera + futuro sostenible</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Future -->
-        <section class="py-20 px-6" style="background-color: #0a1929 !important;">
-            <div class="max-w-5xl mx-auto">
-                <div class="auto-card rounded-3xl p-12 md:p-16 text-center auto-rise">
-                    <div class="mb-8">
-                        <span class="tag-auto inline-block">2026 y Más Allá</span>
-                    </div>
-                    
-                    <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-relaxed">
-                        <span class="gradient-fantastico">100% Autónomo</span>
-                    </h2>
-
-                    <div class="auto-divider my-8"></div>
-
-                    <p class="text-2xl text-white font-bold mb-4">
-                        El Fantástico evolucionará a totalmente autónomo
-                    </p>
-
-                    <p class="text-xl text-gray-300">
-                        Contribuyendo a <span class="text-autonomous font-bold">ciudades inteligentes más seguras e inclusivas</span> mediante soluciones derivadas de esta hazaña
-                    </p>
-
-                    <p class="text-lg text-cyan-300 mt-6 font-bold">
-                        Uniendo academia, industria y pasión por el automovilismo
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Final -->
-        <section class="py-32 px-6 relative overflow-hidden" style="background: linear-gradient(to bottom, #0284c7, #0a1929) !important;">
-            <div class="max-w-5xl mx-auto text-center relative z-10">
-                <div class="auto-rise">
-                    <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight">
-                        <span class="gradient-fantastico">Movilidad del Futuro</span>
-                    </h2>
-                    
-                    <p class="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto">
-                        Segura, limpia y para todos. Tecnología autónoma validada en carreteras mexicanas.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-                        <a href="https://iaExpo.ai/iax-registro" target="_blank" rel="noopener noreferrer" class="btn-auto text-white px-12 py-6 rounded-full font-bold text-xl inline-block text-center">
-                            Asegurar Mi Lugar
-                        </a>
-                        <a href="https://iaExpo.ai" target="_blank" rel="noopener noreferrer" class="btn-outline-auto px-12 py-6 rounded-full font-bold text-xl inline-block text-center">
-                            Más Información
-                        </a>
-                    </div>
-
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="auto-card p-6 rounded-xl">
-                            <div class="mb-3 flex justify-center">
-                                <img src="https://di-uploads-pod28.dealerinspire.com/maseratioffortlauderdale/uploads/2024/12/gc-folgore-model-info-v01.png" alt="Maserati" class="w-16 h-auto" style="filter: drop-shadow(0 0 12px rgba(249, 115, 22, 0.6));">
-                            </div>
-                            <h4 class="font-bold text-white mb-2">El Fantástico</h4>
-                            <p class="text-sm text-gray-400">Alebrijes + Autonomía</p>
-                        </div>
-                        <div class="auto-card p-6 rounded-xl">
-                            <div class="text-3xl mb-3 icon-auto">🏁</div>
-                            <h4 class="font-bold text-white mb-2">440 km</h4>
-                            <p class="text-sm text-gray-400">Totalmente autónomo</p>
-                        </div>
-                        <div class="auto-card p-6 rounded-xl">
-                            <div class="text-3xl mb-3 icon-auto">🌆</div>
-                            <h4 class="font-bold text-white mb-2">Ciudades Inteligentes</h4>
-                            <p class="text-sm text-gray-400">Futuro sostenible</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="py-12 px-6" style="background-color: #0a1929 !important; border-top: 1px solid rgba(6, 182, 212, 0.2) !important;">
-            <div class="max-w-6xl mx-auto text-center">
-                <div class="mb-6">
-                    <h3 class="text-2xl font-bold gradient-fantastico mb-2">Tecnológico de Monterrey</h3>
-                    <p class="text-gray-500 text-sm">Proyecto Insignia en Movilidad</p>
-                </div>
-                <div class="text-sm text-gray-500">
-                    ® 2025 IA Expo Internacional. Todos los derechos reservados.
-                </div>
-            </div>
-        </footer>
+      <div class="rv d2">
+        <div class="portrait">
+          <div class="ring"></div>
+          <div class="frame">
+            <img src="https://iaexpo.github.io/2027.Articulos/DrJorgeLozoya.jpg" alt="Dr. Jorge de Jesús Lozoya Santos" loading="eager">
+          </div>
+          <div class="cap" style="position:absolute;left:24px;right:24px;bottom:24px;z-index:2">
+            <b>Jorge de Jesús<br>Lozoya Santos</b>
+            <small>Profesor Investigador · Tecnológico de Monterrey</small>
+          </div>
+          <div class="chip-float chip-1"><i></i>+440 km en modo autónomo</div>
+          <div class="chip-float chip-2"><i></i>Bloom Drive Intelligence</div>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <script>
-        // Force dark background on load
-        document.addEventListener('DOMContentLoaded', function() {
-            document.documentElement.style.backgroundColor = '#0a1929';
-            document.body.style.backgroundColor = '#0a1929';
-            
-            const wrappers = document.querySelectorAll('body > div, #root, #app, [id*="content"], main');
-            wrappers.forEach(el => {
-                el.style.backgroundColor = '#0a1929';
-            });
-        });
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>El Fantástico</span><span>La Carrera Panamericana</span><span>Laboratorios vivientes</span><span>Fusión de sensores</span><span>Comunicación V2X</span><span>Robotaxi</span><span>Distritos de movilidad automatizada</span><span>Movilidad segura y limpia</span>
+      <span>El Fantástico</span><span>La Carrera Panamericana</span><span>Laboratorios vivientes</span><span>Fusión de sensores</span><span>Comunicación V2X</span><span>Robotaxi</span><span>Distritos de movilidad automatizada</span><span>Movilidad segura y limpia</span>
+    </div>
+  </div>
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+  <!-- ================= SPEAKER ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <span class="eyebrow rv">El autor</span>
+      <h2 class="h2 rv d1">De la investigación<br>a la <span class="grad-text">carretera real</span></h2>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        }, observerOptions);
+      <div class="speaker-grid">
+        <div>
+          <p class="quote-big rv">“La tecnología que no se experimenta no se puede desarrollar.”</p>
 
-        document.querySelectorAll('.auto-rise, .fantastico-emerge').forEach(el => {
-            el.style.animationPlayState = 'paused';
-            observer.observe(el);
-        });
+          <div class="stats rv d1">
+            <div class="stat"><b class="grad-text">440+</b><span>km recorridos en modo autónomo por México a velocidad récord</span></div>
+            <div class="stat"><b class="grad-text">40+</b><span>expertos en tecnología automotriz en su ecosistema de investigación</span></div>
+            <div class="stat"><b class="grad-text">35</b><span>profesores investigadores, con 30 doctorandos y 20 estudiantes de maestría</span></div>
+            <div class="stat"><b class="grad-text">8</b><span>laboratorios de movilidad e investigación en distintos campus del Tec</span></div>
+          </div>
+        </div>
 
-        // Button/Link effects
-        document.querySelectorAll('a[href], button').forEach(element => {
-            element.addEventListener('click', (e) => {
-                element.style.transform = 'scale(0.97)';
-                setTimeout(() => {
-                    element.style.transform = '';
-                }, 100);
-            });
-        });
-    </script>
+        <div class="bio">
+          <p class="rv">El <strong>Dr. Jorge de Jesús Lozoya Santos</strong> es Profesor Investigador del <strong>Tecnológico de Monterrey</strong> y líder del grupo de investigación en Movilidad (Mobility Research Group) de la Escuela de Ingeniería y Ciencias. Encabeza la iniciativa <strong>Bloom Drive Intelligence</strong> y es National Business Developer del Tec, tendiendo puentes entre la investigación y la industria.</p>
+          <p class="rv d1">Su trabajo abarca automatización, ingeniería de control, ingeniería automotriz, sistemas biométricos, transformación digital y movilidad inteligente. Con proyectos como <strong>El Fantástico</strong> en La Carrera Panamericana busca posicionar a México como un laboratorio real para una movilidad más segura, limpia e inteligente.</p>
+
+          <div class="creds">
+            <div class="cred rv d1"><div class="ic">🎓</div><div><b>Ph.D. · Profesor Investigador</b><small>Escuela de Ingeniería y Ciencias, Tecnológico de Monterrey</small></div></div>
+            <div class="cred rv d2"><div class="ic">🚗</div><div><b>Líder de Bloom Drive Intelligence</b><small>Iniciativa del Mobility Research Group que conecta investigación, talento, industria y validación en el mundo real</small></div></div>
+            <div class="cred rv d3"><div class="ic">🏙️</div><div><b>Líder de Causa · Fundación FEMSA</b><small>CampusCity Movilidad Futura y Limpia</small></div></div>
+            <div class="cred rv d4"><div class="ic">🤝</div><div><b>National Business Developer</b><small>Vinculación del Tecnológico de Monterrey con la industria · Monterrey, N.L.</small></div></div>
+          </div>
+
+          <div class="books">
+            <div class="book rv d2"><b>El Fantástico</b><small>Primer vehículo autónomo en recorrer México, en La Carrera Panamericana</small></div>
+            <div class="book rv d3"><b>Distrito de Movilidad Futura</b><small>CampusCity DistritoTec: el primer laboratorio urbano viviente de Latinoamérica</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DATA ================= -->
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <span class="eyebrow rv">I · Qué hicimos</span>
+      <h2 class="h2 rv d1">Un laboratorio <span class="grad-text">en movimiento</span></h2>
+      <p class="lead rv d2">Esto es investigación, y también la oportunidad de demostrar resultados en condiciones extremas: liderazgo en Latinoamérica en investigación aplicada, identidad multicampus y la atención de la industria, el gobierno y la sociedad.</p>
+
+      <div class="data-grid">
+        <div class="dat rv">
+          <div class="num grad-text" data-count="440" data-suffix="+">440+</div>
+          <h4>Kilómetros autónomos</h4>
+          <p>El primer vehículo autónomo en recorrer México, a velocidad récord, en La Carrera Panamericana.</p>
+        </div>
+        <div class="dat rv d1">
+          <div class="num grad-text" data-count="115" data-suffix="">115</div>
+          <h4>Personas de talento</h4>
+          <p>35 profesores investigadores, 10 posdoctorados, 30 doctorandos, 20 estudiantes de maestría y 20 practicantes.</p>
+        </div>
+        <div class="dat rv d2">
+          <div class="num grad-text" data-count="1995" data-suffix="">1995</div>
+          <h4>Una historia de éxito</h4>
+          <p>De la ingeniería de manufactura y el diseño automotriz a la mecatrónica, los laboratorios vivientes y la regulación.</p>
+        </div>
+      </div>
+      <p class="note rv">Datos presentados en el Acta de la ponencia.</p>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <span class="eyebrow rv">II · No todo es IA</span>
+      <h2 class="h2 rv d1">Las 5 disciplinas detrás<br>de un <span class="grad-text">vehículo autónomo</span></h2>
+      <p class="lead rv d2">La inteligencia artificial es una pieza clave, pero un auto que se conduce solo necesita mucho más.</p>
+
+      <div class="skills">
+        <div class="skill rv"><span class="n">01</span><h4>Sistemas embebidos</h4><p>Diseñar e implementar los sistemas electrónicos integrados en el vehículo.</p><span class="out">Frenado, tracción y dirección por cable</span></div>
+        <div class="skill rv d1"><span class="n">02</span><h4>Programación avanzada</h4><p>Dominar los lenguajes y herramientas de programación para sistemas automotrices.</p><span class="out">Software crítico en tiempo real</span></div>
+        <div class="skill rv d2"><span class="n">03</span><h4>Fusión de sensores</h4><p>Integrar datos de LiDAR, cámaras, radar, ultrasonido y GNSS para una mejor percepción.</p><span class="out">Ver el entorno completo</span></div>
+        <div class="skill rv d1"><span class="n">04</span><h4>IA y Machine Learning</h4><p>Desarrollar sistemas inteligentes de percepción, planeación y decisión.</p><span class="out">Del dato a la decisión</span></div>
+        <div class="skill rv d2"><span class="n">05</span><h4>Simulación y modelado</h4><p>Crear entornos virtuales para probar el vehículo antes de salir a la carretera.</p><span class="out">Probar sin riesgo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DUALITY ================= -->
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <span class="eyebrow rv">III · Aprendizajes</span>
+      <h2 class="h2 rv d1">Lo que nos enseñó<br><span class="grad-text">la carretera</span></h2>
+      <p class="lead rv d2">Recorrer México de forma autónoma dejó lecciones claras sobre lo que ya funciona y lo que falta por resolver.</p>
+
+      <div class="duality">
+        <div class="dcard d-pos rv">
+          <span class="tag">México está listo</span>
+          <h3>Lo que ya es realidad</h3>
+          <ul>
+            <li>Las carreteras de México son seguras para evaluar tecnologías disruptivas con laboratorios vivientes.</li>
+            <li>El ecosistema sociotécnico mexicano está listo para adoptar esta tecnología y hay mucho interés.</li>
+            <li>La electromovilidad ya es una realidad.</li>
+          </ul>
+        </div>
+        <div class="dcard d-neg rv d1">
+          <span class="tag">Los retos</span>
+          <h3>Lo que falta resolver</h3>
+          <ul>
+            <li>La inteligencia artificial todavía no está lista para todos los entornos relevantes de la movilidad a bordo.</li>
+            <li>Falta infraestructura de carga masiva y abierta en las principales ciudades.</li>
+            <li>No todo es IA: también hacen falta sistemas embebidos, sensores, simulación y programación avanzada.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="danger rv">
+        <div class="big grad-text">1º</div>
+        <p>Validar en <span class="bad">casos extremos</span> para lograr un <span class="good">uso seguro en lo cotidiano</span>: de la Carrera Panamericana a las calles de nuestras ciudades.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMPARE ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <span class="eyebrow rv">IV · Distrito de Movilidad Futura</span>
+      <h2 class="h2 rv d1">De la ciudad de hoy al <span class="grad-text">distrito del futuro</span></h2>
+      <p class="lead rv d2">CampusCity DistritoTec: un modelo de cocreación donde industria, academia, gobierno y sociedad habilitan un espacio para la movilidad sostenible y compartida.</p>
+
+      <div class="compare rv">
+        <div class="crow chead"><div class="k"></div><div class="a">Movilidad de hoy</div><div class="b">Distrito de movilidad futura</div></div>
+        <div class="crow"><div class="k">Vehículos</div><div class="a">Autos de un solo pasajero.</div><div class="b">Servicios de movilidad compartida, eléctrica y digital.</div></div>
+        <div class="crow"><div class="k">Ambiente</div><div class="a">Contaminación en zonas urbanas.</div><div class="b">Espacios urbanos libres de gases de efecto invernadero.</div></div>
+        <div class="crow"><div class="k">Seguridad</div><div class="a">Prácticas de manejo inseguras y accidentes de tránsito.</div><div class="b">Entorno conectado (V2X) entre vehículos e infraestructura.</div></div>
+        <div class="crow"><div class="k">Servicio</div><div class="a">Servicios de transporte ineficientes.</div><div class="b">Soluciones alineadas a los Objetivos de Desarrollo Sostenible.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRIAD ================= -->
+  <section class="sec sec-alt">
+    <div class="wrap triad-wrap">
+      <div class="rv">
+        <div class="triad">
+          <div class="c c1">Simulación</div>
+          <div class="c c2">Pruebas</div>
+          <div class="c c3">Innovación</div>
+          <div class="core">Laboratorio<br>viviente</div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow rv">El primer living lab urbano de Latinoamérica</span>
+        <h2 class="h2 rv d1">Tres pasos para <span class="grad-text">automatizar la ciudad</span></h2>
+        <p class="lead rv d2">Un laboratorio urbano que impulsa la descarbonización y la automatización del transporte para una movilidad futura, segura y limpia.</p>
+        <div class="intel">
+          <div class="rv d2"><i style="background:var(--cyan);box-shadow:0 0 14px var(--cyan)"></i><p><b>Simulación</b><span>Análisis de datos de tráfico, patrones de movilidad, cobertura de conectividad y eficiencia energética.</span></p></div>
+          <div class="rv d3"><i style="background:var(--violet);box-shadow:0 0 14px var(--violet)"></i><p><b>Pruebas</b><span>Vehículos eléctricos autónomos evaluados en vías reales, con comunicación y transmisión de datos.</span></p></div>
+          <div class="rv d4"><i style="background:var(--amber);box-shadow:0 0 14px var(--amber)"></i><p><b>Innovación</b><span>Integración de proyectos, operación legal y estándares, enfoque comunitario y espacios preparados para la movilidad autónoma.</span></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SCALE / PATHWAY ================= -->
+  <section class="sec" id="ruta">
+    <div class="wrap">
+      <span class="eyebrow rv">V · Pathway 2026–2027</span>
+      <h2 class="h2 rv d1">La ruta hacia la<br><span class="grad-text">movilidad autónoma</span></h2>
+      <p class="lead rv d2">Una hoja de ruta que lleva la autonomía del laboratorio a la ciudad y de vuelta a la carretera más exigente de México.</p>
+
+      <div class="scale">
+        <div class="step rv">
+          <span class="lvl">FEBRERO</span>
+          <h3>Distrito de Movilidad Automatizada</h3>
+          <dl>
+            <div><dt>Dónde</dt><dd>Monterrey</dd></div>
+            <div><dt>Qué</dt><dd>Lanzamiento del circuito de movilidad autónoma en DistritoTec</dd></div>
+          </dl>
+          <span class="risk r-mid">Ciudad</span>
+        </div>
+        <div class="step rv d1">
+          <span class="lvl">JUNIO</span>
+          <h3>Robotaxi en Monterrey</h3>
+          <dl>
+            <div><dt>Qué</dt><dd>Robotaxi operando en las calles de Monterrey</dd></div>
+          </dl>
+          <span class="risk r-mid">Servicio</span>
+        </div>
+        <div class="step rv d2">
+          <span class="lvl">JULIO – AGOSTO</span>
+          <h3>Competencia y Porsche autónomo</h3>
+          <dl>
+            <div><dt>Qué</dt><dd>Competencia en el edge de la movilidad autónoma y presentación del Porsche autónomo</dd></div>
+          </dl>
+          <span class="risk r-high">Alto desempeño</span>
+        </div>
+        <div class="step rv d3">
+          <span class="lvl">OCTUBRE 2026 Y 2027</span>
+          <h3>La Carrera Panamericana</h3>
+          <dl>
+            <div><dt>Qué</dt><dd>El Porsche autónomo en La Carrera Panamericana</dd></div>
+            <div><dt>Por qué</dt><dd>Validar en condiciones extremas para un uso seguro en lo cotidiano</dd></div>
+          </dl>
+          <span class="risk r-win">La meta</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONCLUSIONS ================= -->
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <span class="eyebrow rv">Lo que te llevas</span>
+      <h2 class="h2 rv d1">Tres ideas sobre la <span class="grad-text">movilidad autónoma</span></h2>
+      <div class="concl">
+        <div class="cc rv"><div class="n grad-text">01</div><h4>La movilidad autónoma salva vidas</h4><p>Frenado automático de emergencia, asistencia de carril y detección de obstáculos hacen el transporte más seguro e inclusivo, también para personas con discapacidad.</p></div>
+        <div class="cc rv d1"><div class="n grad-text">02</div><h4>Los laboratorios vivientes aceleran la adopción</h4><p>Experimentar en vías y ciudades reales es lo que permite desarrollar la tecnología y llevarla a la vida cotidiana.</p></div>
+        <div class="cc rv d2"><div class="n grad-text">03</div><h4>México en la cadena de valor</h4><p>México tiene la oportunidad de ser parte de esta gran cadena de valor global. Pero no sólo es IA: hay mucho más por construir.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section class="final">
+    <div class="wrap">
+      <span class="eyebrow rv" style="justify-content:center">IA Expo Internacional 2027</span>
+      <h2 class="rv d1">Creando la movilidad <em class="grad-text">segura y limpia</em> para todos</h2>
+      <p class="rv d2">Vive la sesión magistral del Dr. Jorge Lozoya y descubre cómo México se convierte en un laboratorio real para la movilidad del futuro.</p>
+      <div class="acts rv d3">
+        <a class="btn btn-primary" href="https://iaExpo.ai/#tickets" target="_blank" rel="noopener noreferrer">Asegurar mi lugar <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="https://iaExpo.ai" target="_blank" rel="noopener noreferrer">Conocer IA Expo</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ft">
+    <div class="wrap">
+      <div><b>IA Expo Internacional</b> · © 2025–2027 Todos los derechos reservados.</div>
+      <div class="motto">IA Para la Vida Real</div>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  // Force dark background inside page builders
+  var bg='#060a14';
+  document.documentElement.style.backgroundColor=bg;
+  document.body.style.backgroundColor=bg;
+
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(e){e.classList.add('in')});
+    document.querySelectorAll('.bar i').forEach(function(b){b.style.width=b.getAttribute('data-w')+'%'});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      var t=en.target; t.classList.add('in'); io.unobserve(t);
+      var bar=t.querySelector('.bar i'); if(bar) setTimeout(function(){bar.style.width=bar.getAttribute('data-w')+'%'},250);
+      var num=t.querySelector('[data-count]'); if(num) countUp(num);
+    });
+  },{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+
+  function countUp(el){
+    var end=parseFloat(el.getAttribute('data-count')), suf=el.getAttribute('data-suffix')||'';
+    var dec=(String(end).split('.')[1]||'').length, start=null, dur=1600;
+    function step(ts){ if(!start) start=ts; var p=Math.min((ts-start)/dur,1); var v=end*(1-Math.pow(1-p,3));
+      el.textContent=v.toFixed(dec)+suf; if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+})();
+</script>
 </body>
 </html>
